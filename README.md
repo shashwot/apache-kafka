@@ -11,6 +11,11 @@ $ docker run -itd --name kafka -p 9092:9092 -p 2181:2181 shashwot/apache-kafka
 ```
 
 # Testing
+Lets enter the container to test using the command:
+
+```
+$ docker exec -it kafka bash
+```
 
 Let’s publish and consume a “Hello World” message to make sure the Kafka server is behaving correctly. Publishing messages in Kafka requires:
 
@@ -19,10 +24,7 @@ A consumer, which reads messages and data from topics.
 First, create a topic named TutorialTopic by typing:
 
 ```
-$ docker exec -it kafka bash
-
 $ /opt/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
-
 ```
 Output:
 Created topic "TutorialTopic".
